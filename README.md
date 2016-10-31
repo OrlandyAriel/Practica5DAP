@@ -24,6 +24,6 @@ fecha;
 
 ###Desarrollo de la prÃ¡ctica
 
-**Patron/es utilizado/os:**
+**Patrón/es utilizado/os:**
 * Estrategia
 * Singleton
