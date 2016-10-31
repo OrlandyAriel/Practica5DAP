@@ -15,11 +15,15 @@ Campos de Evento
 idtipoevento;
 fecha;
 
-
 **Rúbrica:**
-
 
 * Utiliza correctamente el/los patrones adecuados. 5 ptos
 * Diseña interfaz. 1 ptos.
 * Uso correcto de hilos 3 ptos
 * Informe con todo lo solicitado 1 pto.
+
+###Desarrollo de la práctica
+
+**Patron/es utilizado/os:**
+* Estrategia
+* Singleton
