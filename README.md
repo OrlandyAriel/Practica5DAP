@@ -24,6 +24,14 @@ fecha;
 
 ###Desarrollo de la práctica
 
-**Patr�n/es utilizado/os:**
+**Patrón/es utilizado/os:**
 * Estrategia
+	* Participantes:
+    	* IEvento
+    	* Ev_atasco
+    	* Ev_emergencia
+    	* Ev_colision
+    	* Ev_lentitud
+    	* Ev_multa
 * Singleton
+	* ColaSingleton
