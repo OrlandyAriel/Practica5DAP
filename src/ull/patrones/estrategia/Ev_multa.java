@@ -1,21 +1,29 @@
 package ull.patrones.estrategia;
 
-import java.util.Calendar;
-
+import ull.patrones.auxilares.Fecha;
 import ull.patrones.singleton.ColaSingleton;
 
 public class Ev_multa implements IEvento
 {
+	private Fecha m_fecha;
+
+	public Ev_multa()
+	{
+		m_fecha = new Fecha();
+	}
+
 	@Override
 	public long getIdTipoEvento()
 	{
 		return 0;
 	}
+
 	@Override
-	public Calendar getFecha()
+	public Fecha getFecha()
 	{
-		return null;
+		return m_fecha;
 	}
+
 	public void run()
 	{
 		try
@@ -27,6 +35,7 @@ public class Ev_multa implements IEvento
 		}
 		ColaSingleton.getInstancia().desacolar(this);
 	}
+
 	@Override
 	public String toString()
 	{
@@ -38,6 +47,6 @@ public class Ev_multa implements IEvento
 	{
 		Thread t_hilo = new Thread(this);
 		t_hilo.start();
-		
+
 	}
-}	
+}

@@ -1,10 +1,11 @@
 package ull.patrones.estrategia;
 
-import java.util.Calendar;
+
+import ull.patrones.auxilares.Fecha;
 
 public interface IEvento extends Runnable
 {
 	public long getIdTipoEvento();
-	public Calendar getFecha();
+	public Fecha getFecha();
 	public void start();
 }

@@ -1,11 +1,17 @@
 package ull.patrones.estrategia;
 
-import java.util.Calendar;
 
+import ull.patrones.auxilares.Fecha;
 import ull.patrones.singleton.ColaSingleton;
 
 public class Ev_emergencia implements IEvento
 {
+	private Fecha m_fecha;
+
+	public Ev_emergencia()
+	{
+		m_fecha = new Fecha();
+	}
 	@Override
 	public void run()
 	{
@@ -26,9 +32,9 @@ public class Ev_emergencia implements IEvento
 	}
 
 	@Override
-	public Calendar getFecha()
+	public Fecha getFecha()
 	{
-		return null;
+		return m_fecha;
 	}
 	@Override
 	public String toString()

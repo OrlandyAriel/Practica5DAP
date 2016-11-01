@@ -23,6 +23,7 @@ public class Fecha
 		m_anio = m_fecha.get(Calendar.YEAR);
 		m_hora = m_fecha.getTime().toString();
 	}
+	
 	@Override
 	public String toString()
 	{
