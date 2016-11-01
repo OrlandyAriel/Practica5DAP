@@ -11,9 +11,9 @@ Para mostrar el correcto funcionamiento de su propuesta, debe crear una aplicaci
 
 
 TIPOS DE EVENTOS: ev_colision, ev_atasco, ev_emergencia, ev_lentitud, ev_multa
-Campos de Evento
-idtipoevento;
-fecha;
+* Campos de Evento
+	* idtipoevento;
+	* fecha;
 
 **Rúbrica:**
 
