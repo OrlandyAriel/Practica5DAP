@@ -15,51 +15,30 @@ public class Practica5DAPPruebaMain
 		ColaSingleton a = ColaSingleton.getInstancia();
 
 		a.acolar(new Ev_colision());
-
+		tiempoEspera(4000);
 		a.acolar(new Ev_multa());
-		try
-		{
-			Thread.sleep(1000);
-		} catch (InterruptedException e)
-		{
-			e.printStackTrace();
-		}
+		tiempoEspera(3000);
 		a.acolar(new Ev_emergencia());
-		try
-		{
-			Thread.sleep(2000);
-		} catch (InterruptedException e)
-		{
-			e.printStackTrace();
-		}
+		tiempoEspera(2000);
 		a.acolar(new Ev_atasco());
-		try
-		{
-			Thread.sleep(2000);
-		} catch (InterruptedException e)
-		{
-			e.printStackTrace();
-		}
+		tiempoEspera(1000);
 		a.acolar(new Ev_lentitud());
-		try
-		{
-			Thread.sleep(1000);
-		} catch (InterruptedException e)
-		{
-			e.printStackTrace();
-		}
+		tiempoEspera(1000);
 		while (true)
 		{
 			System.out.println(a);
-			try
-			{
-				Thread.sleep(500);
-			} catch (InterruptedException e)
-			{
-				e.printStackTrace();
-			}
+			tiempoEspera(500);
 		}
-
+	}
+	public static void tiempoEspera(int i)
+	{
+		try
+		{
+			Thread.sleep(i);
+		} catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 }
