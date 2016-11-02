@@ -38,6 +38,11 @@ public class ColaSingleton
 	@Override
 	public String toString()
 	{
-		return m_cola.toString();
+		String result = "";
+		for (int i = 0; i < m_cola.size(); i++)
+		{
+			result += m_cola.get(i).toString() + "\n";
+		}
+		return result;
 	}
 }
