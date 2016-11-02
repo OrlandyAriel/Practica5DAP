@@ -39,7 +39,7 @@ public class Ev_multa implements IEvento
 	@Override
 	public String toString()
 	{
-		return "Multa";
+		return "Evento: MULTA, Fecha: "+m_fecha;
 	}
 
 	@Override

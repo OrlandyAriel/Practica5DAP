@@ -39,7 +39,7 @@ public class Ev_emergencia implements IEvento
 	@Override
 	public String toString()
 	{
-		return "emergencia";
+		return "Evento: EMERGENCIA, Fecha: "+m_fecha;
 	}
 	@Override
 	public void start()

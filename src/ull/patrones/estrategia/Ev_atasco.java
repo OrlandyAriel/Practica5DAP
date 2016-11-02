@@ -34,7 +34,7 @@ public class Ev_atasco implements IEvento
 	@Override
 	public String toString()
 	{
-		return "Atasco";
+		return "Evento: ATASCO, Fecha: "+m_fecha;
 	}
 	@Override
 	public Fecha getFecha()

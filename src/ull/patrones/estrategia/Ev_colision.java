@@ -34,7 +34,7 @@ public class Ev_colision implements IEvento
 	@Override
 	public String toString()
 	{
-		return "Colision";
+		return "Evento: COLISIÓN, Fecha: "+m_fecha;
 	}
 	@Override
 	public Fecha getFecha()

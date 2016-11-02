@@ -40,7 +40,7 @@ public class Ev_lentitud implements IEvento
 	@Override
 	public String toString()
 	{
-		return "lentitud";
+		return "Evento: LENTITUD, Fecha: "+m_fecha;
 	}
 	@Override
 	public void start()
