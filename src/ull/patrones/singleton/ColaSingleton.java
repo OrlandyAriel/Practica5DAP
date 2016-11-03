@@ -33,8 +33,8 @@ public class ColaSingleton
 	 */
 	public void acolar(IEvento a_evento)
 	{
-		m_cola.addFirst(a_evento);
-		m_cola.getFirst().start();
+		m_cola.addLast(a_evento);
+		m_cola.getLast().start();
 	}
 	/**
 	 * Método que elimina el último elemento de la cola
@@ -42,7 +42,7 @@ public class ColaSingleton
 	 */
 	public void desacolar()
 	{
-		m_cola.removeLast();
+		m_cola.removeFirst();
 	}
 	/**
 	 * Método para eliminar un objeto concreto de la cola
