@@ -9,24 +9,25 @@ import ull.patrones.singleton.ColaSingleton;
 
 public class Practica5DAPPruebaMain
 {
+	private static ColaSingleton singleton;
 
 	public static void main(String[] args)
 	{
-		ColaSingleton a = ColaSingleton.getInstancia();
+		singleton = ColaSingleton.getInstancia();
 
-		a.acolar(new Ev_colision());
+		singleton.acolar(new Ev_colision());
 		tiempoEspera(4000);
-		a.acolar(new Ev_multa());
+		singleton.acolar(new Ev_multa());
 		tiempoEspera(3000);
-		a.acolar(new Ev_emergencia());
+		singleton.acolar(new Ev_emergencia());
 		tiempoEspera(2000);
-		a.acolar(new Ev_atasco());
+		singleton.acolar(new Ev_atasco());
 		tiempoEspera(1000);
-		a.acolar(new Ev_lentitud());
+		singleton.acolar(new Ev_lentitud());
 		tiempoEspera(1000);
 		while (true)
 		{
-			System.out.println(a);
+			System.out.println(singleton);
 			tiempoEspera(500);
 		}
 	}

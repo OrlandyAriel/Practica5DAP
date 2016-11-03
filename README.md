@@ -23,7 +23,6 @@ TIPOS DE EVENTOS: ev_colision, ev_atasco, ev_emergencia, ev_lentitud, ev_multa
 * Informe con todo lo solicitado 1 pto.
 
 ###Desarrollo de la práctica
-
 **Patrón/es utilizado/os:**
 * Estrategia
 	* Participantes:
@@ -35,3 +34,9 @@ TIPOS DE EVENTOS: ev_colision, ev_atasco, ev_emergencia, ev_lentitud, ev_multa
     	* Ev_multa
 * Singleton
 	* ColaSingleton
+
+##Ejecutar el proyecto
+Para ejecutar la aplicación en modo demostración (sin graficos) ir a:
+* ull/patrones/Practia5DAPPruebaMain.java
+Para ejecutar la aplicación en modo grafico ir a:
+* ull/patrones/Practica5DAP.java
