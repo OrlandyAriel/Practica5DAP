@@ -3,7 +3,6 @@ package ull.patrones.ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,17 +23,19 @@ import ull.patrones.estrategia.IEvento;
 import ull.patrones.singleton.ColaSingleton;
 
 public class VentanaPrincipal extends JFrame
-{ // ATRIBUTOS
+{	//ATRIBUTOS
 	private JButton m_btnAnadirAtasco;
 	private JButton m_btnAnadirColision;
 	private JButton m_btnAnadirEmergencia;
 	private JButton m_btnAnadirLentitud;
 	private JButton m_btnAnadirMulta;
+	private JLabel m_labelInfo;
 	private JPanel m_panelBotones;
+	private JPanel m_panelBajo;
 	private ScrollPane m_scrollPanel;
 	private JTextArea m_textArea;
 	private ColaSingleton m_colaSingleton;
-
+	
 	/**
 	 * constructor por defecto
 	 */
@@ -42,7 +43,6 @@ public class VentanaPrincipal extends JFrame
 	{
 		initComponet();
 	}
-
 	/**
 	 * Método para inicializar los distintos componentes de la ventana
 	 */
@@ -53,7 +53,6 @@ public class VentanaPrincipal extends JFrame
 		initVentana();
 		actualizaJtexArea();
 	}
-
 	/**
 	 * Método que crea el panel donde iran los botones y lo configura
 	 */
@@ -67,8 +66,19 @@ public class VentanaPrincipal extends JFrame
 		m_panelBotones.add(m_btnAnadirEmergencia);
 		m_panelBotones.add(m_btnAnadirLentitud);
 		m_panelBotones.add(m_btnAnadirMulta);
+		configPanelBajo();
 	}
-
+	private void configPanelBajo()
+	{
+		m_panelBajo = new JPanel();
+		m_panelBajo.setLayout(new BoxLayout(m_panelBajo, BoxLayout.Y_AXIS));
+		m_labelInfo = new JLabel("AÑADIR EVENTO DE:");
+		m_labelInfo.setVisible(true);
+		m_labelInfo.setForeground(Color.RED);
+		m_labelInfo.setHorizontalAlignment(JLabel.LEFT);
+		m_panelBajo.add(m_labelInfo);;
+		m_panelBajo.add(m_panelBotones);
+	}
 	/**
 	 * Configruación del scrollPane
 	 */
@@ -79,10 +89,9 @@ public class VentanaPrincipal extends JFrame
 		m_textArea.setEditable(false);
 		m_textArea.setEnabled(false);
 		m_scrollPanel = new ScrollPane();
-		m_scrollPanel.setBounds(10, 30, 200, 110);
+		m_scrollPanel.setBounds(10,30,200,110); 
 		m_scrollPanel.add(m_textArea);
 	}
-
 	/**
 	 * Método que crea y configura los botones
 	 */
@@ -94,46 +103,36 @@ public class VentanaPrincipal extends JFrame
 		m_btnAnadirLentitud = crearBtn("Lentitud", new Ev_lentitud());
 		m_btnAnadirMulta = crearBtn("Multa", new Ev_multa());
 	}
-
 	/**
 	 * Agrupa las acciones repetitivas de un crear un botón
-	 * 
-	 * @param a_titulo,
-	 *            titulo visible del boton
-	 * @param a_evento,
-	 *            IEvento del que quiere añadir al hacer click @return, retorna
-	 *            el botón creado con su fuionalidad
+	 * @param a_titulo, titulo visible del boton
+	 * @param a_evento, IEvento del que quiere añadir al hacer click
+	 * @return, retorna el botón creado con su fuionalidad
 	 */
 	private JButton crearBtn(String a_titulo, IEvento a_evento)
 	{
 		JButton t_button = new JButton(a_titulo);
 		t_button.setVisible(true);
-		t_button.addActionListener(
-				new ActionListener()
-				{
-					@Override
-					public void actionPerformed(ActionEvent arg0)
-					{
-						singleton(a_evento);
-					}
-				}
-		);
+		t_button.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent arg0)
+			{
+				singleton(a_evento);
+			}
+		});
 		return t_button;
 	}
-
 	/**
 	 * Agrega un elemento a la lista
-	 * 
 	 * @param e
 	 */
 	private void agregaElem(String e)
 	{
 		m_textArea.setText(e);
 	}
-
 	/**
 	 * Método para añadir un evento desde un botón
-	 * 
 	 * @param a_evento
 	 */
 	private void singleton(IEvento a_evento)
@@ -142,14 +141,13 @@ public class VentanaPrincipal extends JFrame
 		m_colaSingleton.acolar(a_evento);
 		agregaElem(m_colaSingleton.toString());
 	}
-
 	/**
 	 * Método que se actualiza cada 5 segundos la cola en la ventana
 	 */
 	private void actualizaJtexArea()
 	{
 		m_colaSingleton = ColaSingleton.getInstancia();
-		while (true)
+		while(true)
 		{
 			try
 			{
@@ -163,20 +161,19 @@ public class VentanaPrincipal extends JFrame
 
 		}
 	}
-
 	/**
 	 * Configuración de la ventana
 	 */
 	private void initVentana()
 	{
 		this.setTitle("Practica 5-DAP");
-		this.setSize(450, 300);
+		this.setSize(450,300);
 		this.setLayout(new BorderLayout());
 		this.setVisible(true);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		add(m_panelBotones, BorderLayout.SOUTH);
+		add(m_panelBajo ,BorderLayout.SOUTH);
 		add(m_scrollPanel, BorderLayout.CENTER);
 	}
 }
