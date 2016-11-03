@@ -37,6 +37,7 @@ public class VentanaPrincipal extends JFrame
 		initPanelBotones();
 		initScrollPane();
 		initVentana();
+		actualizaJtexArea();
 	}
 	/**
 	 * Método que crea el panel donde iran los botones y lo configura
@@ -92,7 +93,10 @@ public class VentanaPrincipal extends JFrame
 		m_colaSingleton.acolar(a_evento);
 		agregaElem(m_colaSingleton.toString());
 	}
-	public void go()
+	/**
+	 * Método que se actualiza cada 5 segundos la cola en la ventana
+	 */
+	private void actualizaJtexArea()
 	{
 		m_colaSingleton = ColaSingleton.getInstancia();
 		while(true)
