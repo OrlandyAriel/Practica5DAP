@@ -8,7 +8,7 @@ public class Ev_lentitud implements IEvento
 {
 
 	private Fecha m_fecha;
-
+	private final int m_idtipoevento = 0004;
 	public Ev_lentitud()
 	{
 		m_fecha = new Fecha();
@@ -29,7 +29,7 @@ public class Ev_lentitud implements IEvento
 	@Override
 	public long getIdTipoEvento()
 	{
-		return 0;
+		return m_idtipoevento;
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class Ev_lentitud implements IEvento
 	@Override
 	public String toString()
 	{
-		return "Evento: LENTITUD, Fecha: "+m_fecha;
+		return "Evento: LENTITUD, Fecha: "+m_fecha+", con ID: "+m_idtipoevento;
 	}
 	@Override
 	public void start()

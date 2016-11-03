@@ -7,7 +7,7 @@ import ull.patrones.singleton.ColaSingleton;
 public class Ev_emergencia implements IEvento
 {
 	private Fecha m_fecha;
-
+	private final int m_idtipoevento = 0003;
 	public Ev_emergencia()
 	{
 		m_fecha = new Fecha();
@@ -28,7 +28,7 @@ public class Ev_emergencia implements IEvento
 	@Override
 	public long getIdTipoEvento()
 	{
-		return 0;
+		return m_idtipoevento;
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class Ev_emergencia implements IEvento
 	@Override
 	public String toString()
 	{
-		return "Evento: EMERGENCIA, Fecha: "+m_fecha;
+		return "Evento: EMERGENCIA, Fecha: "+m_fecha+", con ID: "+m_idtipoevento;
 	}
 	@Override
 	public void start()

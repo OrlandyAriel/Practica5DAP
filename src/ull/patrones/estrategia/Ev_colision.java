@@ -8,7 +8,7 @@ public class Ev_colision implements IEvento
 {
 
 	private Fecha m_fecha;
-
+	private final int m_idtipoevento = 0001;
 	public Ev_colision()
 	{
 		m_fecha = new Fecha();
@@ -29,12 +29,12 @@ public class Ev_colision implements IEvento
 	@Override
 	public long getIdTipoEvento()
 	{
-		return 0;
+		return m_idtipoevento;
 	}
 	@Override
 	public String toString()
 	{
-		return "Evento: COLISIÓN, Fecha: "+m_fecha;
+		return "Evento: COLISIÓN, Fecha: "+m_fecha+", con ID: "+m_idtipoevento;
 	}
 	@Override
 	public Fecha getFecha()
