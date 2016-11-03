@@ -30,9 +30,7 @@ public class VentanaPrincipal extends JFrame
 	private JButton m_btnAnadirEmergencia;
 	private JButton m_btnAnadirLentitud;
 	private JButton m_btnAnadirMulta;
-	private JLabel m_labelInfo;
 	private JPanel m_panelBotones;
-	private JPanel m_panelBajo;
 	private ScrollPane m_scrollPanel;
 	private JTextArea m_textArea;
 	private ColaSingleton m_colaSingleton;
