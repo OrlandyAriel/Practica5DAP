@@ -18,10 +18,10 @@ import ull.patrones.singleton.ColaSingleton;
 public class VentanaPrincipal extends JFrame
 {	//ATRIBUTOS
 	private JButton m_btnAnadirEvento;
-	
 	private JPanel m_panelBotones;
 	private ScrollPane m_scrollPanel;
 	private JTextArea m_textArea;
+	private ColaSingleton m_colaSingleton;
 	/**
 	 * constructor por defecto
 	 */
@@ -47,7 +47,6 @@ public class VentanaPrincipal extends JFrame
 		m_panelBotones = new JPanel(new FlowLayout());
 		m_panelBotones.setVisible(true);
 		m_panelBotones.add(m_btnAnadirEvento);
-		
 	}
 	/**
 	 * Configruación del scrollPane
@@ -83,13 +82,32 @@ public class VentanaPrincipal extends JFrame
 	{
 		m_textArea.setText(e);
 	}
+	/**
+	 * Método para añadir un evento desde un botón
+	 * @param a_evento
+	 */
 	private void singleton(IEvento a_evento)
 	{
-		ColaSingleton a = ColaSingleton.getInstancia();
-		a.acolar(a_evento);
-		System.out.println(a);
-		agregaElem(a.toString());
-		
+		m_colaSingleton = ColaSingleton.getInstancia();
+		m_colaSingleton.acolar(a_evento);
+		agregaElem(m_colaSingleton.toString());
+	}
+	public void go()
+	{
+		m_colaSingleton = ColaSingleton.getInstancia();
+		while(true)
+		{
+			try
+			{
+				Thread.sleep(500);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			agregaElem(m_colaSingleton.toString());
+			System.out.println(m_colaSingleton);
+
+		}
 	}
 	/**
 	 * Configuración de la ventana
