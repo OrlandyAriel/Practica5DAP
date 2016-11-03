@@ -6,6 +6,7 @@ public class Practica5DAP
 {
 	public static void main(String[] args)
 	{
-		new VentanaPrincipal();
+		VentanaPrincipal a=new VentanaPrincipal();
+		a.go();
 	}
 }
